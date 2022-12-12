@@ -1,7 +1,7 @@
 <?php
 
 function Conectar() {
-    $link = new mysqli("locathost", "root", "Majocast124!", "libreria") or die("Error al conectar a la B.D");
+    $link = new mysqli("localhost", "root", "Majocast124!", "libreria") or die("Error al conectar a la B.D");
 
     return $link;
 }
