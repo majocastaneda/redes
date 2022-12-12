@@ -21,7 +21,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         if (isset($_POST['btnIngresar']) != null) {
             $correo = $_POST['txtemail'];
             $clave = $_POST['txtclave'];
-            $sql = "SELECT * FROM usuario WHERE USU_CORREO='$correo' and USU_CLAVE='$clave'";
+            $sql = "SELECT * FROM USUARIO WHERE USU_CORREO='$correo' AND USU_CLAVE='$clave'";
 
             $result = Conectar()->query($sql);
             foreach ($result as $row) {
