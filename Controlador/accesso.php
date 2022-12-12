@@ -4,24 +4,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="sweetalert2.min.css">
+ 
+
     </head>
-    <body>
+<body>
+
+ 
 
         <?php
         session_start();
         include '../Modelo/BD.php';
 
+ 
+
         if (isset($_POST['btnIngresar']) != null) {
             $correo = $_POST['txtemail'];
             $clave = $_POST['txtclave'];
-            $sql = "SELECT * FROM USUARIO WHERE USU_CORREO='$correo' AND USU_CLAVE='$clave'";
+            $sql = "SELECT * FROM usuario WHERE USU_CORREO='$correo' and USU_CLAVE='$clave'";
+
+ 
 
             $result = Conectar()->query($sql);
             foreach ($result as $row) {
@@ -31,42 +37,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             if (@$perfil) {
                 switch (@$perfil) {
                     case 1:
-                        echo "<script>
-                Swal.fire({
-                html:'ADMINISTRADOR',
-                icon:'success'}).then((Value)=>{
-                    location.href='../Vista/Libros.php'
-                    });
-                </script>";
+                        echo "si";
                         break;
                     case 2:
-                        echo "<script>
-                Swal.fire({
-                html:'VENDEDOR 1',
-                icon:'success'}).then((Value)=>{
-                    location.href='../Vista/inicio.php'
-                    });
-                </script>";
+                        echo "no";
                         break;
                     case 3:
-                        echo "<script>
-                Swal.fire({
-                html:'VENDEDOR 2',
-                icon:'success'}).then((Value)=>{
-                    location.href='../Vista/inicio.php'
-                    });
-                </script>";
+                        echo "no";
                 }
             } else {
-                echo"<script>
-                Swal.fire({
-                html:'ACCESO DENEGADO',
-                icon:'error'}).then((Value)=>{
-                    location.href='../index.php'
-                    });
-                </script>";
+                 echo "no";
             }
         }
         ?>
-    </body>
-</html>        
+</body>
+</html>
