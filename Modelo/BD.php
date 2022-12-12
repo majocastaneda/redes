@@ -6,7 +6,7 @@ function Conectar() {
     echo '-------------------';
 echo 'antes de conectar a la bd';
 echo '-------------------';
-    $link = new mysqli("192.168.100.59", "admin", "Majocast124!", "libreria") or die("Error al conectar a la B.D");
+    $link = new mysqli("localhost", "majo", "Majocast124!", "libreria") or die("Error al conectar a la B.D");
     echo '-------------------';
 echo 'el valor de la conexion es:'.$link;
 echo '-------------------';
