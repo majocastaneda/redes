@@ -17,11 +17,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
  
 
         <?php
+echo '-------------------';
+echo 'antes 1';
+echo '-------------------';
         session_start();
         include '../Modelo/BD.php';
-
- 
-
+echo '-------------------';
+echo 'despues de hacer la conexion 2';
+echo '-------------------';
         if (isset($_POST['btnIngresar']) != null) {
             $correo = $_POST['txtemail'];
             $clave = $_POST['txtclave'];
@@ -51,4 +54,4 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         }
         ?>
 </body>
-</html>
+</html>        
